@@ -1,0 +1,26 @@
+<br>
+<!-- ASSIGNMENT #1 -->
+
+<!-- MARC'S SOLUTION -->
+<input type="text" class="form-control" [(ngModel)]="username" (keyup)="onTypingUsername($event)">
+
+<p>{{ username }}</p>
+
+<button class="btn btn-success" [disabled]="isButtonDisabled" (click)="onResetUsername()">Reset Username</button>
+
+
+<!-- MAX'S SOLUTION -->
+<!-- <input type="text" class="form-control" [(ngModel)]="username">
+
+<p>{{ username }}</p>
+
+<button class="btn btn-success" [disabled]="username === ''" (click)="username = ''">Reset Username</button> -->
+
+<br>
+<!-- ASSIGNMENT #2 -->
+
+<button class="btn btn-primary" (click)="onDisplayDetailsClick()">Display Details</button>
+<p *ngIf="isDisplayClicked">Secret Password = Ice Cream</p>
+<ul>
+    <li *ngFor="let log of actionLogs; index as i" [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'undefined'}" [ngClass]="{actionLogItem: i >= 4}">{{ log }}</li>
+</ul>
